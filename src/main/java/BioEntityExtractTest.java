@@ -1,5 +1,8 @@
-import java.util.*;
-import org._dmis.object.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org._dmis.object.BioEntityExtractor;
+import org._dmis.object.BioEntityInfo;
+import org._dmis.object.BioEntityType;
 
 public class BioEntityExtractTest {
     public static void main(String[] args) {
