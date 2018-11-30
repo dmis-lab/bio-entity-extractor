@@ -20,7 +20,7 @@ import java.util.*;
 public class BEE_SilverStandardCorpus {
     public BEE_SilverStandardCorpus() {}
 
-    private static void extract(String inputDir, String outputDir) throws IOException {
+    private static void extract(String inputDir, String outputDir, String dictPath) throws IOException {
         File out = new File(outputDir);
         if (!out.exists()) {
             if (out.mkdirs()) {
@@ -28,7 +28,6 @@ public class BEE_SilverStandardCorpus {
             }
         }
 
-        final String dictPath = "src/main/resources/dictionary.txt";
         BioEntityExtractor bee = new BioEntityExtractor(dictPath);
 
         Gson gson = new Gson();
@@ -160,6 +159,7 @@ public class BEE_SilverStandardCorpus {
     public static void main(String[] args) throws IOException {
         String inputDir = "YOUR_PUBMED_JSON_INPUT_DIR";
         String outputDir = "OUTPUT_DIR";
-        extract(inputDir, outputDir);
+        String dictPath = "src/main/resources/dictionary.txt";
+        extract(inputDir, outputDir, dictPath);
     }
 }
